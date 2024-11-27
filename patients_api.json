@@ -1,0 +1,280 @@
+{
+  "apiVersion": "1.0",
+  "basePath": "/api",
+  "routes": [
+    {
+      "path": "/patients",
+      "method": "GET",
+      "description": "Retrieves a list of all patients.",
+      "response": {
+        "status": 200,
+        "description": "Successful retrieval of patient list.",
+        "body": [
+          {
+            "patientId": "integer",
+            "firstName": "string",
+            "lastName": "string",
+            "dob": "string",
+            "gender": "string",
+            "contactNumber": "string",
+            "email": "string",
+            "address": "string",
+            "emergencyContact": {
+              "name": "string",
+              "phone": "string"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "path": "/patients/{id}",
+      "method": "GET",
+      "description": "Retrieves detailed information about a specific patient by their ID.",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "type": "integer",
+          "description": "The ID of the patient to retrieve"
+        }
+      ],
+      "response": {
+        "status": 200,
+        "description": "Successful retrieval of patient details.",
+        "body": {
+          "patientId": "integer",
+          "firstName": "string",
+          "lastName": "string",
+          "dob": "string",
+          "gender": "string",
+          "contactNumber": "string",
+          "email": "string",
+          "address": "string",
+          "emergencyContact": {
+            "name": "string",
+            "phone": "string"
+          },
+          "medicalHistory": [
+            {
+              "date": "string",
+              "condition": "string",
+              "treatment": "string",
+              "doctor": "string"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "/patients",
+      "method": "POST",
+      "description": "Adds a new patient to the system.",
+      "parameters": [
+        {
+          "name": "firstName",
+          "in": "body",
+          "required": true,
+          "type": "string",
+          "description": "The first name of the patient"
+        },
+        {
+          "name": "lastName",
+          "in": "body",
+          "required": true,
+          "type": "string",
+          "description": "The last name of the patient"
+        },
+        {
+          "name": "dob",
+          "in": "body",
+          "required": true,
+          "type": "string",
+          "format": "date",
+          "description": "The date of birth of the patient"
+        },
+        {
+          "name": "gender",
+          "in": "body",
+          "required": true,
+          "type": "string",
+          "enum": ["Male", "Female", "Other"],
+          "description": "The gender of the patient"
+        },
+        {
+          "name": "contactNumber",
+          "in": "body",
+          "required": true,
+          "type": "string",
+          "description": "The contact number of the patient"
+        },
+        {
+          "name": "email",
+          "in": "body",
+          "required": false,
+          "type": "string",
+          "format": "email",
+          "description": "The email address of the patient"
+        },
+        {
+          "name": "address",
+          "in": "body",
+          "required": false,
+          "type": "string",
+          "description": "The residential address of the patient"
+        },
+        {
+          "name": "emergencyContact",
+          "in": "body",
+          "required": false,
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "phone": {
+              "type": "string"
+            }
+          },
+          "description": "Emergency contact information for the patient"
+        }
+      ],
+      "response": {
+        "status": 201,
+        "description": "The patient was successfully created.",
+        "body": {
+          "patientId": "integer",
+          "firstName": "string",
+          "lastName": "string",
+          "dob": "string",
+          "gender": "string",
+          "contactNumber": "string",
+          "email": "string",
+          "address": "string",
+          "emergencyContact": {
+            "name": "string",
+            "phone": "string"
+          }
+        }
+      }
+    },
+    {
+      "path": "/patients/{id}",
+      "method": "PUT",
+      "description": "Updates the information of an existing patient by their ID.",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "type": "integer",
+          "description": "The ID of the patient to update"
+        },
+        {
+          "name": "firstName",
+          "in": "body",
+          "required": false,
+          "type": "string",
+          "description": "The first name of the patient"
+        },
+        {
+          "name": "lastName",
+          "in": "body",
+          "required": false,
+          "type": "string",
+          "description": "The last name of the patient"
+        },
+        {
+          "name": "dob",
+          "in": "body",
+          "required": false,
+          "type": "string",
+          "format": "date",
+          "description": "The date of birth of the patient"
+        },
+        {
+          "name": "gender",
+          "in": "body",
+          "required": false,
+          "type": "string",
+          "enum": ["Male", "Female", "Other"],
+          "description": "The gender of the patient"
+        },
+        {
+          "name": "contactNumber",
+          "in": "body",
+          "required": false,
+          "type": "string",
+          "description": "The contact number of the patient"
+        },
+        {
+          "name": "email",
+          "in": "body",
+          "required": false,
+          "type": "string",
+          "format": "email",
+          "description": "The email address of the patient"
+        },
+        {
+          "name": "address",
+          "in": "body",
+          "required": false,
+          "type": "string",
+          "description": "The residential address of the patient"
+        },
+        {
+          "name": "emergencyContact",
+          "in": "body",
+          "required": false,
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "phone": {
+              "type": "string"
+            }
+          },
+          "description": "Emergency contact information for the patient"
+        }
+      ],
+      "response": {
+        "status": 200,
+        "description": "The patient information was successfully updated.",
+        "body": {
+          "patientId": "integer",
+          "firstName": "string",
+          "lastName": "string",
+          "dob": "string",
+          "gender": "string",
+          "contactNumber": "string",
+          "email": "string",
+          "address": "string",
+          "emergencyContact": {
+            "name": "string",
+            "phone": "string"
+          }
+        }
+      }
+    },
+    {
+      "path": "/patients/{id}",
+      "method": "DELETE",
+      "description": "Deletes a patient by their ID.",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "type": "integer",
+          "description": "The ID of the patient to delete"
+        }
+      ],
+      "response": {
+        "status": 204,
+        "description": "The patient was successfully deleted."
+      }
+    }
+  ]
+}
