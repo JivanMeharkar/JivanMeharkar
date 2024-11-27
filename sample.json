@@ -1,5 +1,5 @@
 
-#create new Record
+#create new Record post/patients
 {
   "firstName": "vijay",
   "lastName": "gode",
@@ -10,32 +10,6 @@
   "address": "123 Main Street, Yavatmal",
   "emergencyContact": {
     "name": "vijay gode",
-    "phone": "+91987654321"
-  }
-}
-{
-  "firstName": "sham",
-  "lastName": "raut",
-  "dob": "2005-06-02",
-  "gender": "Male",
-  "contactNumber": "+91542165981",
-  "email": "shamraut@gmsil.com",
-  "address": "149 Main Street, Amravati",
-  "emergencyContact": {
-    "name": "shankar raut",
-    "phone": "+91987654321"
-  }
-}
-{
-  "firstName": "vikrant ",
-  "lastName": "bhond",
-  "dob": "2003-06-28",
-  "gender": "Male",
-  "contactNumber": "+1234567890",
-  "email": "vikrantbhond@gmail.com",
-  "address": "123 Main Street, nagpur",
-  "emergencyContact": {
-    "name": "vijay bhond",
     "phone": "+91987654321"
   }
 }
