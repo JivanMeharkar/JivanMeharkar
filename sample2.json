@@ -1,0 +1,30 @@
+#patient list Get/paitent
+  {
+    "patientId": 1,
+   "firstName": "vijay",
+  "lastName": "gode",
+  "dob": "2007-05-15",
+  "gender": "Male",
+  "contactNumber": "+918552659845",
+  "email": "vijaygode@gmail.com",
+  "address": "123 Main Street, Yavatmal",
+  "emergencyContact": {
+    "name": "vijay gode",
+    "phone": "+91987654321"
+    }
+  },
+  {
+    "patientId": 2,
+    "firstName": "sumit",
+    "lastName": "raut",
+    "dob": "2003-08-22",
+    "gender": "male",
+    "contactNumber": "+9122334455",
+    "email": "alice.smith@example.com",
+    "address": "456 Elm Street, Amaravti",
+    "emergencyContact": {
+      "name": "vishal raut",
+      "phone": "+5566778899"
+    }
+  }
+
